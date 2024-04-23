@@ -1,9 +1,7 @@
 ---
-import Button from "src/components/Button.astro"
-import CardService from "src/components/CardService.astro"
-import CardWorks from "src/components/CardWorks.astro"
-import Menu from "src/components/Menu.astro"
-import TitlePage from "src/components/TitlePage.astro"
+import Menu from "src/components/Menu.astro";
+const Card = "div";
+const Content = "div";
 ---
 
 <html lang="en">
@@ -12,14 +10,28 @@ import TitlePage from "src/components/TitlePage.astro"
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="viewport" content="width=device-width" />
 		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
+		<title>Portfolio</title>
 	</head>
 	<body>
-		<Button title="Boton"/>
-		<CardService title="titulo" description="desc"/>
-		<CardWorks title="titulo" image="images/work1.jpg" description="desc"/>
-		<TitlePage title="titulo" subtitle="subtitle" />
 		<Menu />
-		
+
+		<div class="absolute w-full min-h-screen">
+			<div
+				class="absolute z-0 top-0 w-full h-1/2 bg-cover
+						bg-bottom pt-20 px-12
+						bg-gradient-to-r from-purple-500 to-pink-500">
+			</div>
+		</div>
+
+		<Card class="relative z-10 flex min-h-screen h-auto justify-center items-center">
+			<Content class="relative z-20 bg-white md:flex p-12 shadow-lg rounded-lg w-full max-w-4xl">
+				<div class="sm:flex flex-col py-1 md:pr-10">
+					<h2 class="text-lg mb-3">Hello, I'am</h2>
+					<h1 class="text-5xl font-bold text-gray-800 mb-6">Marcos</h1>
+					<p class="text-xl">FullStack Web Developer who crafts greats websites and awesome apps</p>
+				</div>
+				<img src="/images/user.jpg" alt="user_image" class="flex-shrink-0 w-80 rounded-full border-6 border-white shadow-md">
+			</Content>
+		</Card>
 	</body>
 </html>
